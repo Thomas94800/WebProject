@@ -1,0 +1,21 @@
+extends layout 
+block content 
+
+  div.loginpart
+    h2 Already have an account ? Login below !
+    br
+    div.box
+      form(action="/login", method="post")
+        div
+          label(for="username") Username:
+          input(type="text", name="username", id="username")
+        div
+          label(for="password") Password:
+          input(type="password", name="password", id="password")
+        div
+          button(type="submit") Login
+        p= error
+      div 
+        a.registerlink(href="/signup") Don't have an account ? Register here !
+    br
+    br
