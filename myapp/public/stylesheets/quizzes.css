@@ -38,7 +38,7 @@ p {
     margin-bottom: 20px;
 }
 
-button {
+.softbutton {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -48,8 +48,36 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.softbutton:hover {
     background-color: #45a049;
+}
+
+.mediumbutton {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mediumbutton:hover {
+    background-color: rgb(217, 153, 33);
+}
+
+.hardbutton {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hardbutton:hover {
+    background-color: rgb(220, 44, 44);
 }
 
 img {
