@@ -1,4 +1,38 @@
 extends layout 
 block content 
 
-    h1 Quizzes page
+    div.quizzestitle
+        h1 Test your knowledge with our quizzes!
+    
+    div.flagsquiz 
+        div.box 
+            h2 Flags quiz
+            br
+            p Test your knowledge of flags by gessing the corresponding country!
+            br
+            a(href="/flagsquiz")
+                button Start
+            br
+            img(src="../images/flagsquiz.png", alt="flagsquiz", width="40%", height="40%")
+
+    div.capitalsquiz 
+        div.box 
+            h2 Capitals quiz
+            br
+            p Test your knowledge of the worlds capitals!
+            br
+            a(href="/capitalsquiz")
+                button Start
+            br
+            img(src="../images/capitalsquiz.png", alt="capitalsquiz", width="40%", height="40%")
+
+    div.mixedquiz 
+        div.box 
+            h2 Mixed quiz
+            br
+            p Test your knowledges of flags and capitals!
+            br
+            a(href="/mixedquiz")
+                button Start
+            br
+            img(src="../images/mixedquiz.png", alt="mixedquiz", width="40%", height="40%")
