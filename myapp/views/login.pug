@@ -1,21 +1,21 @@
-extends layout 
-block content 
+extends layout
 
-  div.loginpart
-    h2 Login below !
-    br
-    div.box
-      form(action="/login", method="post")
-        div
-          label(for="username") Username:
-          input(type="text", name="username", id="username")
-        div
-          label(for="password") Password:
-          input(type="password", name="password", id="password")
-        div
-          button(type="submit") Login
-        p= error
-      div 
-        a.registerlink(href="/signup") Don't have an account ? Register here !
-    br
-    br
+block content
+
+    div.login-div
+        section#login-section
+
+            h1 Login
+
+            form#login-form(action="/login", method="post")
+                label(for="username") Email:
+                input(type="username", id="username", name="username", required)
+
+                label(for="password") Password:
+                input(type="password", id="password", name="password", required)
+
+                input(type="submit", value="Login")
+
+            p
+                a(href="/signup") No register yet? Sign Up
+   

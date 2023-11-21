@@ -2,45 +2,15 @@ extends layout
 block content
 
 
-
-  div.div-1
   
-    //img.logo(src='images/logo.png' alt='Geo Master Logo' width="10%", height="10%")
+  div.div-1.d-flex.justify-content-center.align-items-center
+    a.btn.btn-login(href='/login', role='button') Login
 
-    nav.menu-bar
-      ul
-        li 
-          a(href='/') Home
 
-        li
-          a(href='/courses') Courses
-            div.sub-menu-1
-              ul 
-                li 
-                  a(href='/flagscourse') Flags
-                li 
-                  a(href='/capitalscourse') Capitals
+  
+    
 
-        li
-          a(href='/quizzes') Quizzes
-            div.sub-menu-1
-              ul 
-                li 
-                  a(href='/flagsquiz') Guess the country
-                li 
-                  a(href='/capitalsquiz') Guess the capital
-                li 
-                  a(href='/mixquiz') Mixed questions
-         
-        li 
-          a(href='/information') Information
-
-        //li
-          a(href='/contact') Contact
-
-        li
-          a(href='/login')  Login                                         
-            i.fas.fa-user 
+  
 
   div.div-2
     img(src="../images/homepage_image2.jpg", alt="image_div-2", width="40%", height="80%")
