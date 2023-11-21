@@ -10,74 +10,30 @@
   background-image: url("../images/homepage_bg_image1.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   font-family: 'Fjalla One', sans-serif;
-  height: 900px;
-}
-
-.menu-bar{
-  background-color: transparent;
-  text-align: center;
-  position: relative;
-}
-
-.menu-bar ul{
-  display: inline-flex;
-  list-style: none;
-  color: #fff;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.menu-bar ul li{
-  width: 120px;
-  padding: 15px;
-  margin: 15px;
-}
-
-.menu-bar ul li a{
-  text-decoration: none;
-  color: #fff;
-}
-
-.menu-bar ul li:hover{ /* .active maybe latter use*/
-  background-color: #fff;
+  height: 720px;
+  width: 100%;
   
 }
 
-.active, .menu-bar ul li:hover a{
-  color: #000;
-  background-color: transparent;
+.div-1 .btn-login {
+  font-size: 30px; /* Taille de la police plus grande */
+  color: white; /* Couleur du texte */
+  background-color: rgba(255, 255, 255, 0.5); /* Fond blanc semi-transparent */
+  border: none; /* Pas de bordure */
+  padding: 15px 30px; /* Padding pour un bouton plus large */
+  font-family: 'Arial', sans-serif; /* Changer la police si nécessaire */
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
 }
 
-.sub-menu-1{
-  display: none;
-  text-align: left;
+.div-1 .btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.7); /* Fond plus opaque au survol */
 }
 
-.menu-bar ul li:hover .sub-menu-1{
-  display: block;
-  position: absolute;
-  background-color: #fff;
-  margin-top: 15px;
-  margin-left: -15px;
-}
 
-.menu-bar ul li:hover .sub-menu-1 ul{
-  display: block;
-}
-
-.manu-bar ul li:hover .sub-menu-1 ul li{
-  width: 150px;
-  border-bottom: 3px dashed #000;
-  background: transparent;
-  border-radius: 0px;
-  text-align: left;
-}
-
-.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
-  border-bottom: none;
-}
 
 
 /* div 2 */

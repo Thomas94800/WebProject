@@ -1,0 +1,53 @@
+.register-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Hauteur minimale pour occuper tout l'écran vertical */
+    padding: 20px; /* Pour éviter que le formulaire ne touche les bords de l'écran */
+  }
+  
+  
+  
+  
+  .register-container {
+    width: 300px; 
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #297385;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  
+  p {
+    text-align: center;
+  }
+  
+  a {
+    color: #297385;
+    text-decoration: none;
+  }
+  
