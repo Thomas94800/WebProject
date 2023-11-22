@@ -1,0 +1,25 @@
+extends layout 
+block content 
+
+    section
+    
+        h2 Quiz #{quizNumber} -  Divers information about the world
+
+        form(action=`/submitDiversQuiz${quizNumber}`, method="post")
+            each question in questions
+                div
+                    p= question.question
+                    label
+                        input(type="radio", name=`answer_${question.id}`, value=question.prop1, required)
+                        | #{question.prop1}
+                    label
+                        input(type="radio", name=`answer_${question.id}`, value=question.prop2, required)
+                        | #{question.prop2}
+                    label
+                        input(type="radio", name=`answer_${question.id}`, value=question.prop3, required)
+                        | #{question.prop3}
+                    label
+                        input(type="radio", name=`answer_${question.id}`, value=question.prop4, required)
+                        | #{question.prop4}
+
+            button(type="submit") Submit Quiz

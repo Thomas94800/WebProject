@@ -45,10 +45,6 @@ app.use('/users', usersRouter);
 app.get('/', (req, res) => {
   res.render('index');
 });
-// Route for courses page
-app.get('/courses', (req, res) => {
-  res.render('courses');
-});
 // Route for quizzes page
 app.get('/quizzes', (req, res) => {
   res.render('quizzes');
@@ -69,26 +65,55 @@ app.get('/login', (req, res) => {
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
-// Route for flags course
-app.get('/flagscourse', (req, res) => {
-  res.render('flagscourse');
+// Route for capital quiz 1
+app.get('/quizcapital1', (req, res) => {
+  res.render('quizcapital1');
 });
-// Route for capitals course
-app.get('/capitalscourse', (req, res) => {
-  res.render('capitalscourse');
+// Route for capital quiz 2
+app.get('/quizcapital2', (req, res) => {
+  res.render('quizcapital2');
 });
-// Route for flags quiz
-app.get('/flagsquiz', (req, res) => { 
-  res.render('flagsquiz');
+// Route for capital quiz 3
+app.get('/quizcapital3', (req, res) => {
+  res.render('quizcapital3');
 });
-// Route for capitals quiz
-app.get('/capitalsquiz', (req, res) => {
-  res.render('capitalsquiz');
+// Route for divers quiz 1
+app.get('/quizdivers1', (req, res) => {
+  res.render('quizdivers1');
 });
-// Route for mix quiz
-app.get('/mixedquiz', (req, res) => {
-  res.render('mixedquiz');
+// Route for divers quiz 2
+app.get('/quizdivers2', (req, res) => {
+  res.render('quizdivers2');
 });
+// Route for divers quiz 3
+app.get('/quizdivers3', (req, res) => {
+  res.render('quizdivers3');
+});
+// Route for capital quiz 1 result
+app.get('/quizcapital1result', (req, res) => {
+  res.render('quizcapital1result');
+});
+// Route for capital quiz 2 result
+app.get('/quizcapital2result', (req, res) => {
+  res.render('quizcapital2result');
+});
+// Route for capital quiz 3 result
+app.get('/quizcapital3result', (req, res) => {
+  res.render('quizcapital3result');
+});
+// Route for divers quiz 1 result
+app.get('/quizdivers1result', (req, res) => {
+  res.render('quizdivers1result');
+});
+// Route for divers quiz 2 result
+app.get('/quizdivers2result', (req, res) => {
+  res.render('quizdivers2result');
+});
+// Route for divers quiz 3 result
+app.get('/quizdivers3result', (req, res) => {
+  res.render('quizdivers3result');
+});
+
 
 
 
@@ -130,7 +155,6 @@ db.connect((err) => {
  });
 
 
- 
 // To validate a user
 function validateUser(password, hash) {
 bcrypt
@@ -232,6 +256,7 @@ function verifyToken(token) {
 
 
 
+// End of the file
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
