@@ -1,62 +1,51 @@
-
-/* Login */
-
-.login-div {
-    background-color: whitesmoke;
-    font-family: Fjalla One, sans-serif;
-    height: 720px;
+.login-page-container, .register-page-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: left;
+    min-height: 100vh;
+    padding: 20px;
   }
   
-  #login-section {
-    border: 2px solid #ccc; 
-    padding: 100px; 
-    border-radius: 3px;
-    
+  .login-container, .register-container {
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
   }
   
-  .login-div h1 {
-    font-size: 36px;
-    text-align: left;
+  .form-group {
+    margin-bottom: 15px;
   }
   
-  .login-div form label,
-  .login-div form input,
-  .login-div form p {
-    font-size: large;
-    display: block;
-    margin: 10px 0;
-  }
-  
-  
-  .login-div form label {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="username"] {
     width: 100%;
-    font-size: 14px;;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
   }
   
-  .login-div form input{
-    margin-bottom: 30px ;
-    border-radius: 1px;
-    border: 1px solid #297385;
-    }
-  
-  .login-div p{
-    font-size: 14px;
-    margin-bottom: 30px;
-    text-align: left;
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #297385;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
-  .login-div p a{
-
+  p {
+    text-align: center;
+  }
+  
+  a {
+    color: #297385;
     text-decoration: none;
-    padding: 6px;
-
-    padding-left: 60px;
-    padding-right: 60px;
-  
   }
+  
+  
   

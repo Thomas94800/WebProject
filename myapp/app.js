@@ -93,8 +93,6 @@ app.get('/mixedquiz', (req, res) => {
 
 
 
-// Register and login
-
 // Middleware to verify JWT token
 const verifyJWT = (req, res, next) => {
   const token = req.cookies.token;
@@ -173,26 +171,32 @@ app.post('/register', (req, res) => {
   });
 });
 
-// To login a user
 app.post('/login', (req, res) => {
   let { username, password } = req.body;
   const query = 'SELECT * FROM users WHERE username = ?';
   db.query(query, [username], (err, result) => {
     if (err) {
-      // Handle the error appropriately
       console.error(err);
-      res.status(500).send('Username or password not found.');
-    }
-    console.log(password, "^^^^")
-    bcrypt.compare(password, result[0].password).then((result) => {   
-      if(result){  
-        console.log('User logged in successfully'); 
-        res.redirect("/"); // Redirect to the home page
+      res.status(500).send('Error occurred during login.');
+    } else if (result.length === 0) {
+      res.render("login", {error: "Username not found."});
+    } else {
+      bcrypt.compare(password, result[0].password, (err, isMatch) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send('Error occurred during password verification.');
+        } else if (isMatch) {
+          console.log('User logged in successfully');
+          // Generate and send the JWT token
+          const token = generateToken(username);
+          res.cookie('token', token, { httpOnly: true });
+          res.redirect("/quizzes"); // Redirect to the quizzes page
         } else {
-          res.render("index", {error: "Username or password not found."})
-        } 
-    })
-  })
+          res.render("/login", {error: "Incorrect password."});
+        }
+      });
+    }
+  });
 });
 
 // Initialize the session

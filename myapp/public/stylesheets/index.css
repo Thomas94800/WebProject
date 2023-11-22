@@ -19,19 +19,18 @@
 }
 
 .div-1 .btn-login {
-  font-size: 30px; /* Taille de la police plus grande */
-  color: white; /* Couleur du texte */
-  background-color: rgba(255, 255, 255, 0.5); /* Fond blanc semi-transparent */
-  border: none; /* Pas de bordure */
-  padding: 15px 30px; /* Padding pour un bouton plus large */
-  font-family: 'Arial', sans-serif; /* Changer la police si nécessaire */
-  border-radius: 5px; /* Coins arrondis */
-  transition: background-color 0.3s ease; /* Transition pour l'effet au survol */
+  font-size: 30px; 
+  color: white; 
+  background-color: rgba(255, 255, 255, 0.5); 
+  border: none; 
+  padding: 15px 30px; 
+  font-family: 'Arial', sans-serif; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease; 
 }
 
 .div-1 .btn-login:hover {
-  background-color: rgba(255, 255, 255, 0.7); /* Fond plus opaque au survol */
-}
+  background-color: rgba(255, 255, 255, 0.7); 
 
 
 
