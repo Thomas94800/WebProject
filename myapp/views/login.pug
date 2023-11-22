@@ -1,21 +1,19 @@
 extends layout
 
 block content
+  .login-page-container
+    .login-container
+      h2 Login
+      form#login-form(action="/login", method="post")
+        .form-group
+          label(for="username") Username
+          input(type="username", id="username", name="username", required)
+        .form-group
+          label(for="password") Password
+          input(type="password", id="password", name="password", required)
+        button(type="submit") Login
+      p
+        | No account yet? 
+        a(href="/signup") Sign Up
 
-    div.login-div
-        section#login-section
-
-            h1 Login
-
-            form#login-form(action="/login", method="post")
-                label(for="username") Email:
-                input(type="username", id="username", name="username", required)
-
-                label(for="password") Password:
-                input(type="password", id="password", name="password", required)
-
-                input(type="submit", value="Login")
-
-            p
-                a(href="/signup") No register yet? Sign Up
    
