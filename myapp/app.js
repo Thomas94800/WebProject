@@ -188,7 +188,7 @@ app.post('/register', (req, res) => {
           // Generate and send the JWT token
           const token = generateToken(username); // Call the function to generate the token
           res.cookie('token', token, { httpOnly: true }); // Set the token in a cookie (you can use other methods too)
-          res.redirect('/'); // Redirect to the main page
+          res.redirect('/login'); // Redirect to the main page
         }
       });
     }
