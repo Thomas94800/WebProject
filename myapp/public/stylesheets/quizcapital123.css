@@ -1,50 +1,137 @@
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
+/* General Styles */
+
   
-  section {
-    max-width: 800px;
-    margin: 50px auto;
+  /* Section Styling */
+  .sectionQuizCap {
+    background-color: #ffffff;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
+    margin: 20px auto;
+    width: 80%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  /* Heading */
+  .sectionQuizCap h2 {
+    color: #1d515e;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eeeeee;
+    line-height: 1.6;
   }
   
-  h2 {
-    color: #333;
-  }
-  
-  form {
+  /* Form Styling */
+  .sectionQuizCap form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     margin-top: 20px;
   }
   
-  div {
-    margin-bottom: 20px;
+  /* Question Div */
+  .sectionQuizCap div {
+    background: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #297385;
+    border-radius: 2px;
   }
   
-  label {
+  /* Question Paragraph */
+  .sectionQuizCap p {
+    font-size: 1.1em;
+    margin: 0;
+  }
+  
+  /* Labels and Inputs */
+  .sectionQuizCap label {
     display: block;
-    margin-bottom: 10px;
+    margin: 5px 0;
   }
   
-  input[type="radio"] {
+  .sectionQuizCap input[type='radio'] {
     margin-right: 10px;
   }
   
-  button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
+  /* Submit Button */
+  .sectionQuizCap button[type='submit'] {
+    background-color: #297385;
+    color: #ffffff;
     border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
     cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
   }
   
-  button:hover {
-    background-color: #45a049;
+  .sectionQuizCap button[type='submit']:hover {
+    background-color: #297385;
   }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sectionQuizCap {
+      width: 95%;
+    }
+  }
+  
+
+/*# For result pages */
+
+
+  /* Results Section Styling */
+  .sectionQuizResult {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading */
+  .sectionQuizResult h2 {
+    color: #1d515e;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eeeeee;
+  }
+  
+  /* Feedback Div */
+  .sectionQuizResult div {
+    background: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #297385;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Feedback Paragraphs */
+  .sectionQuizResult p {
+    font-size: 1em;
+    margin: 5px 0;
+  }
+  
+  /* Correct Answer Highlight */
+  .sectionQuizResult .correct {
+    color: #27ae60;
+  }
+  
+  /* Incorrect Answer Highlight */
+  .sectionQuizResult .incorrect {
+    color: #e74c3c;
+  }
+  
+  /* Final Grade */
+  .sectionQuizResult.final-grade {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3498db;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sectionQuizResult {
+      width: 95%;
+    }
+  }
+  
