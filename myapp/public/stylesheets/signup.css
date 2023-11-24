@@ -30,7 +30,7 @@
     border-radius: 4px;
   }
   
-  button[type="submit"] {
+   .register-page-container button[type="submit"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -42,11 +42,11 @@
   
 
   
-  p {
+  .register-page-container p {
     text-align: center;
   }
   
-  a {
+  .register-page-container a {
     color: #297385;
     text-decoration: none;
   }

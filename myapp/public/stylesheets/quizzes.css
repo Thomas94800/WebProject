@@ -1,85 +1,105 @@
 /* Quizzes page */
 
-body {
+/* Style général de la page */
+
+
+.quizzesPage{
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.quizzestitle {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.box {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-}
-
-.flagsquiz, .capitalsquiz, .mixedquiz {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 50px;
-}
-
-h2 {
+    background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
+    padding-bottom: 30px;
+
 }
 
-p {
+/* En-tête des sections */
+.quizzesPage h1 {
+    text-align: center;
+    color: #297385;
+    align-items: center;
+    padding : 20px;
+}
+
+/* Style des sections */
+
+
+.quizzesPage .box {
+    background-color: white;
+    margin-left: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    
+}
+
+/* Style des titres de quiz */
+.quizzesPage .box h2 {
+    color: #818181;
+    text-align: center;
+    margin-bottom: 15px;  
+}
+
+/* Style des paragraphes */
+.quizzesPage .box p {
+    font-size: 16px;
     color: #666;
-    margin-bottom: 20px;
 }
 
-.softbutton {
-    background-color: #4CAF50;
+
+/* Style des boutons */
+.quizzesPage .box button {
+    display: inline-block;
+ 
+    border: none;
+    
     color: white;
     padding: 10px 20px;
-    border: none;
+    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.softbutton:hover {
-    background-color: #45a049;
+.quizzesPage .button-container{
+    text-align: center;
 }
 
-.mediumbutton {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.quizzesPage button:hover {
+    background-color: #f9ecec;
+    color: #084858;
+    font-size: large;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.mediumbutton:hover {
-    background-color: rgb(217, 153, 33);
+.quizzesPage .softbutton {
+    background-color: rgb(130, 196, 212);
 }
 
-.hardbutton {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.quizzesPage .mediumbutton {
+    background-color: #cb98d8;;
 }
 
-.hardbutton:hover {
-    background-color: rgb(220, 44, 44);
+.quizzesPage .hardbutton {
+    background-color: rgb(238, 145, 151);;
 }
 
-img {
-    margin-top: 20px;
+/* Style des images */
+.quizzesPage img.quizImage {
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quizzesPage .div.box {
+        margin: 10px;
+    }
+
+    .quizzesPage img.quizImage {
+        width: 80%;
+        height: auto;
+    }
 }
