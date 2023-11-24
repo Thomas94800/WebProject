@@ -1,0 +1,15 @@
+extends layout 
+block content 
+    
+
+    br
+
+    h2 Edit User
+
+    br
+
+    form(action="/confirmediteduser", method="post")#editform
+        input(type="hidden", name="id", value=user.id)
+        input(type="text", name="username", value=user.username)
+        input(type="text", name="password", value=user.password)
+        button(type="submit")#editbutton Edit User
