@@ -11,3 +11,6 @@ block content
         p= `Your Answer - ${item.userAnswer}, Correct Answer - ${item.correctAnswer}, ${item.isCorrect ? 'Correct' : 'Incorrect'}`
 
     p= `Final Grade: ${percentageGrade.toFixed(2)}%`
+
+    button 
+      a(href="/quizzes") Return to Quizzes

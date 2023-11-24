@@ -12,10 +12,7 @@ const saltRounds = 10;
 const password = 'password';
 const session = require('express-session');
 
-
-
 var createError = require('http-errors');
-//var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -23,7 +20,43 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
+const MySQLStore = require('express-mysql-session')(session);
+
+// Configuring SQL connection
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'project'
+ });
+db.connect((err) => {
+  if (err) {
+    console.error('Database connection failed:', err);
+  } else {
+    console.log('Connected to the database');
+  }
+});
+// Configuring session
+const sessionStore = new MySQLStore({
+  host: 'localhost',
+  port: 3000, 
+  user: 'root',
+  password: '',
+  database: 'project',
+  createDatabaseTable: true, 
+}, db);
+app.use(session({
+  key: 'YassThom78', 
+  secret: 'YassThom78', 
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24, // 1 day
+  },
+}));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -113,58 +146,40 @@ app.get('/quizdivers2result', (req, res) => {
 app.get('/quizdivers3result', (req, res) => {
   res.render('quizdivers3result');
 });
+// Route for usersbook page
+app.get('/usersbook', (req, res) => {
+  res.render('usersbook');
+});
+// Route for user page
+app.get('/user', (req, res) => {
+  res.render('user');
+});
+// Route for usersearch page
+app.get('/usersearch', (req, res) => {
+  res.render('usersearch');
+});
+// Route for useredit page
+app.get('/useredit', (req, res) => {
+  res.render('useredit');
+});
+// Route for userdelete page
+app.get('/userdelete', (req, res) => {
+  res.render('userdelete');
+});
 
 
-
-
-
-// Middleware to verify JWT token
-const verifyJWT = (req, res, next) => {
-  const token = req.cookies.token;
-  if (!token) {
-    return res.status(403).json({ message: 'Unauthorized' });
-  }
-  try {
-    const decoded = jwt.verify(token, secretKey);
-    req.user = decoded;
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: 'Invalid token' });
-  }
-};
 
 // Route for userpage
-app.get('/userpage', verifyJWT, (req, res) => {
+app.get('/userpage', (req, res) => {
   res.render('userpage');
 });
 
 
-// Configuring SQL connection
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'project'
- });
-db.connect((err) => {
-  if (err) {
-    console.error('Database connection failed:', err);
-  } else {
-    console.log('Connected to the database');
-  }
- });
-
 
 // To validate a user
 function validateUser(password, hash) {
-bcrypt
-.compare(password, hash)
-.then(res => {
-  return true;
-})
-return false;
+  return bcrypt.compare(password, hash);
 }
-
 // To register a user in the database
 app.post('/register', (req, res) => {
   let { username, password } = req.body;
@@ -187,7 +202,8 @@ app.post('/register', (req, res) => {
           console.log('User registered successfully');
           // Generate and send the JWT token
           const token = generateToken(username); // Call the function to generate the token
-          res.cookie('token', token, { httpOnly: true }); // Set the token in a cookie (you can use other methods too)
+          res.cookie('token', token, { httpOnly: false }); // Set the token in a cookie
+          req.session.jwt = token; // Set the token in the session
           res.redirect('/'); // Redirect to the main page
         }
       });
@@ -195,6 +211,7 @@ app.post('/register', (req, res) => {
   });
 });
 
+// To login a user on the website
 app.post('/login', (req, res) => {
   let { username, password } = req.body;
   const query = 'SELECT * FROM users WHERE username = ?';
@@ -205,6 +222,7 @@ app.post('/login', (req, res) => {
     } else if (result.length === 0) {
       res.render("login", {error: "Username not found."});
     } else {
+      const id = result[0].id;
       bcrypt.compare(password, result[0].password, (err, isMatch) => {
         if (err) {
           console.error(err);
@@ -212,11 +230,18 @@ app.post('/login', (req, res) => {
         } else if (isMatch) {
           console.log('User logged in successfully');
           // Generate and send the JWT token
-          const token = generateToken(username);
-          res.cookie('token', token, { httpOnly: true });
-          res.redirect("/quizzes"); // Redirect to the quizzes page
+          const token = generateToken(id);
+          res.cookie('token', token, { httpOnly: false });
+          console.log("token", token);
+          req.session.jwt = token;
+          // Check if the user is an admin
+          if (result[0].admin == 1) {
+            res.redirect("/usersbook"); // Redirect to the usersbook page if admin
+          } else {
+            res.redirect("/quizzes"); // Redirect to the quizzes page if not admin
+          }      
         } else {
-          res.render("/login", {error: "Incorrect password."});
+          res.render("login", {error: "Incorrect password."});
         }
       });
     }
@@ -233,8 +258,8 @@ app.use(
 );
 
 // Generate a JWT
-function generateToken(username) { 
-  const payload = { username }; 
+function generateToken(id) { 
+  const payload = { id }; 
   const options = { expiresIn: '1h' }; // Token expiration time 
   return jwt.sign(payload, secretKey, options); 
 } 
@@ -243,13 +268,11 @@ function generateToken(username) {
 function verifyToken(token) { 
   try { 
     const decoded = jwt.verify(token, secretKey); 
-    return decoded.username; 
+    return decoded.id; 
   } catch (err) { 
     return null; // Token is invalid or expired 
   } 
 } 
-
-
 
 
 
@@ -274,4 +297,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+// Exporting modules
 module.exports = app;
