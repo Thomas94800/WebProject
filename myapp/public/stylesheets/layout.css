@@ -10,13 +10,14 @@ header{
     background-color:#297385;
     height: 5%;
     width: 100%;
+    padding: 10px;
 }
 
 header h1{
     text-align: center;
     font-size: 16px;
     font-family: 'Fjalla One', sans-serif;
-    padding-top: 0.7%;
+    
     color: #fff;
 }
 
@@ -24,10 +25,14 @@ header h1{
 /*footer*/
 
 footer {
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
     font-family: 'Fjalla One', sans-serif;
     font-size: 14px;
     text-align: center;
-    width: 100%;
+    
 }
 
 .footer-div-1{
@@ -37,25 +42,25 @@ footer {
     text-decoration: none;
     display: inline-flex;
     list-style: none;
-    height: 50%;
+    padding: 20px;
 }
 
 .footer-div-1 a{
-    position: relative;
-    left: 350px; 
+    
     margin: auto ;
     text-decoration: none;
     color: #17404b;
     font-size: 14px;
     font-weight: bold;
-    padding: 10px;
-    margin: 10px;
+    
+   
 }
 
 .footer-div-2{
     background-color: #17404b;
     display: flex; 
     align-items: center;
+    padding: 50px;
   
 }
 

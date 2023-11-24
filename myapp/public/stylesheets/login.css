@@ -28,7 +28,7 @@
     border-radius: 4px;
   }
   
-  button[type="submit"] {
+  .login-page-container button[type="submit"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -38,11 +38,11 @@
     cursor: pointer;
   }
   
-  p {
+  .login-page-container p {
     text-align: center;
   }
   
-  a {
+  .login-page-container a {
     color: #297385;
     text-decoration: none;
   }

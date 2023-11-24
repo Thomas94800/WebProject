@@ -1,37 +1,41 @@
 extends layout 
 block content 
 
-    div.quizzestitle
-        h1 Test your knowledge with our quizzes!
 
-    div.flagsquiz 
-        div.box 
-            h2 Capitals
-            br
-            p Test your knowledge of the entire world's capitals!
-            br
-            p Launch a game:
-            a(href="/quizcapital1")
-                button.softbutton Quiz 1
-            a(href="/quizcapital2")
-                button.mediumbutton Quiz 2
-            a(href="/quizcapital3")
-                button.hardbutton Quiz 3
-            br
-            img(src="../images/capitalsquiz.png", alt="flagsquiz", width="40%", height="40%")
+    div.quizzesPage
+        div.quizzestitle
+            h1 Test your knowledge with our quizzes!
+        
+        div.flagsQuizSection
+            div.box 
+                h2 Capitals
+                br
+                p Test your knowledge of the entire world's capitals!
+                br
+                p Launch a game:
+                .button-container
+                    a(href="/quizcapital1")
+                        button.softbutton Quiz 1
+                    a(href="/quizcapital2")
+                        button.mediumbutton Quiz 2
+                    a(href="/quizcapital3")
+                        button.hardbutton Quiz 3
+                    br
 
-    div.capitalsquiz 
-        div.box 
-            h2 Divers
-            br
-            p Test your knowledge of the divers places and facts in the world!
-            br
-            p Launch a game:
-            a(href="/quizdivers1")
-                button.softbutton Quiz 1
-            a(href="/quizdivers2")
-                button.mediumbutton Quiz 2
-            a(href="/quizdivers3")
-                button.hardbutton Quiz 3
-            br
-            img(src="../images/capitalsquiz.png", alt="capitalsquiz", width="40%", height="40%")
+        div.capitalsQuizSection
+            div.box 
+                h2 Divers
+                br
+                p Test your knowledge of the divers places and facts in the world!
+                br
+                p Launch a game:
+                .button-container
+                    a(href="/quizdivers1")
+                        button.softbutton Quiz 1
+                    a(href="/quizdivers2")
+                        button.mediumbutton Quiz 2
+                    a(href="/quizdivers3")
+                        button.hardbutton Quiz 3
+                    br
+
+ 
