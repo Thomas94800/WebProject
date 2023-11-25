@@ -180,6 +180,7 @@ app.get('/userpage', (req, res) => {
 function validateUser(password, hash) {
   return bcrypt.compare(password, hash);
 }
+
 // To register a user in the database
 app.post('/register', (req, res) => {
   let { username, password } = req.body;
@@ -223,6 +224,7 @@ app.post('/login', (req, res) => {
       res.render("login", {error: "Username not found."});
     } else {
       const id = result[0].id;
+      const userUsername = result[0].username; 
       bcrypt.compare(password, result[0].password, (err, isMatch) => {
         if (err) {
           console.error(err);
@@ -247,6 +249,9 @@ app.post('/login', (req, res) => {
     }
   });
 });
+
+
+
 
 // Initialize the session
 app.use(
