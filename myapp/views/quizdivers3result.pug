@@ -10,6 +10,6 @@ block content
         p= `${questions[index].question}` 
         p= `Your Answer - ${item.userAnswer}, Correct Answer - ${item.correctAnswer}, ${item.isCorrect ? 'Correct' : 'Incorrect'}`
 
-    p= `Final Grade: ${percentageGrade.toFixed(2)}%`
+    p.result= `${percentageGrade.toFixed(2)}%`
 
     
