@@ -447,6 +447,53 @@ router.post('/submitDiversQuiz3', (req, res) => {
   });
 });
 
+// Function to retrieve user's quiz scores from the database
+const getUserQuizScores = (userId) => {
+  const query = 'SELECT quizcapital1, quizcapital2, quizcapital3, quizdivers1, quizdivers2, quizdivers3 FROM users WHERE id = ?';
+  return new Promise((resolve, reject) => {
+    db.query(query, [userId], (err, result) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result[0]); // Assuming the result is an array with a single user row
+      }
+    });
+  });
+};
+
+// Middleware to check if the user is logged in
+const verifySession = (req, res, next) => {
+  // Check if req.session.jwt is set
+  const token = req.session.jwt;
+  if (!token) {
+    // If not, redirect the user to the login page
+    return res.redirect('/login');
+  }
+  // If the token is set, verify it
+  const userId = verifyToken(token);
+  if (!userId) {
+    // If verification fails, redirect to login
+    return res.redirect('/login');
+  }
+  // If verification succeeds, set the user ID in the request for further use
+  req.userId = userId;
+  next();
+};
+
+// Route handler for the quizzes route
+router.get('/quizzes', verifySession, async (req, res) => {
+  try {
+    const userId = verifyToken(req.session.jwt);
+    const quizScores = await getUserQuizScores(userId);
+    // Render the quizzes page and pass the quiz scores to the template
+    res.render('quizzes', { quizScores });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error retrieving user quiz scores');
+  }
+});
+
+
 
 // Users management by administrators
 

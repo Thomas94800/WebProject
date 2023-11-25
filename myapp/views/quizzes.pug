@@ -4,7 +4,8 @@ block content
 
     div.quizzesPage
         div.quizzestitle
-            h1 Test your knowledge with our quizzes!
+            // Display the user's name
+            h1 Hello #{username}! Test your knowledge with our quizzes!
         
         div.flagsQuizSection
             div.box 
@@ -16,10 +17,13 @@ block content
                 .button-container
                     a(href="/quizcapital1")
                         button.softbutton Quiz 1
+                        p Your last score: #{quizScores.quizcapital1 || 'None'}
                     a(href="/quizcapital2")
                         button.mediumbutton Quiz 2
+                        p Your last score: #{quizScores.quizcapital2 || 'None'}
                     a(href="/quizcapital3")
                         button.hardbutton Quiz 3
+                        p Your last score: #{quizScores.quizcapital3 || 'None'}
                     br
 
         div.capitalsQuizSection
@@ -32,10 +36,13 @@ block content
                 .button-container
                     a(href="/quizdivers1")
                         button.softbutton Quiz 1
+                        p Your last score: #{quizScores.quizdivers1 || 'None'}
                     a(href="/quizdivers2")
                         button.mediumbutton Quiz 2
+                        p Your last score: #{quizScores.quizdivers2 || 'None'}
                     a(href="/quizdivers3")
                         button.hardbutton Quiz 3
+                        p Your last score: #{quizScores.quizdivers3 || 'None'}
                     br
 
  
