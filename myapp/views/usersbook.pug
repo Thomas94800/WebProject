@@ -1,35 +1,39 @@
 extends layout
 block content
 
-    
-    h1 Users Book
-    h2 You are connected as an administrator of the website.
+    .userbook
+        h1 Users Book
+        h2 You are connected as an administrator of the website.
 
-    br
+        br
 
-    
-    form(action="/searchuser", method="post")#searchform
-        input(type="text", name="username", placeholder="Username")
-        button(type="submit")#searchbutton Search
+        
+        form(action="/searchuser", method="post")#searchform
+            input(type="text", name="username", placeholder="Username")
+            button(type="submit")#searchbutton Search
 
-    br
+        br
 
-    form(action="/adduser", method="post")#addform
-        input(type="text", name="username", placeholder="Username")
-        input(type="text", name="password", placeholder="Password")
-        button(type="submit")#addbutton Add User
+        form(action="/adduser", method="post")#addform
+            input(type="text", name="username", placeholder="Username")
+            input(type="text", name="password", placeholder="Password")
+            button(type="submit")#addbutton Add User
 
-    br
+        br
 
-    each user in users
-        div(class="box")
-            p= user.username
-            p= user.password
-            div(id="linebuttons")
-                form(action=`/deleteuser/${user.id}`, method="post")
-                    button(type="submit")#deletebutton Delete
-                form(action=`/edituser`, method="post")
-                    input(type="hidden", name="username", value=user.username)
-                    input(type="hidden", name="password", value=user.password)
-                    input(type="hidden", name="id", value=user.id)
-                    button(type="submit")#editbutton Edit
+        each user in users
+            div(class="box")
+                p= user.username
+                p= user.password
+                div(id="linebuttons")
+                    form(action=`/deleteuser/${user.id}`, method="post")
+                        button(type="submit")#deletebutton Delete
+                    form(action=`/edituser`, method="post")
+                        input(type="hidden", name="username", value=user.username)
+                        input(type="hidden", name="password", value=user.password)
+                        input(type="hidden", name="id", value=user.id)
+                        button(type="submit")#editbutton Edit
+
+    div.homeButtonContainer
+        a(href="/")
+            button.homeButton Home

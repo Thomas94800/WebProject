@@ -1,0 +1,98 @@
+/* General Styles */
+
+  /* Userbook Styling */
+  .userbook {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Headings */
+  .userbook h1, h2 {
+    text-align: center;
+    color: #444444;
+  }
+  
+  .userbook h1 {
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid #eeeeee;
+  }
+  
+  .userbook h2 {
+    font-size: 1em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #888888;
+  }
+  
+  /* Forms and Buttons */
+  .userbook form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .userbook input[type='text'] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .userbook button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #searchbutton, #addbutton {
+    background-color: #297385;
+    color: white;
+  }
+  
+  #deletebutton {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #editbutton {
+    background-color: #f1c40f;
+    color: white;
+  }
+  
+  /* User Boxes */
+  .userbook .box {
+    background: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #297385;
+    margin-bottom: 10px;
+  }
+  
+  #linebuttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .userbook {
+      width: 95%;
+    }
+  
+    .userbook form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .userbook button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
