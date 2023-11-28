@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Hauteur minimale pour occuper tout l'écran vertical */
-    padding: 20px; /* Pour éviter que le formulaire ne touche les bords de l'écran */
+    min-height: 100vh; 
+    padding: 20px; 
   }
   
   

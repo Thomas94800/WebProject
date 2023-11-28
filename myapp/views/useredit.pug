@@ -1,15 +1,19 @@
 extends layout 
 block content 
     
+    .EditUser
+        br
 
-    br
+        h2 Edit User
 
-    h2 Edit User
+        br
 
-    br
+        form(action="/confirmediteduser", method="post")#editform
+            input(type="hidden", name="id", value=user.id)
+            input(type="text", name="username", value=user.username)
+            input(type="text", name="password", value=user.password)
+            button(type="submit")#editbutton Edit User
 
-    form(action="/confirmediteduser", method="post")#editform
-        input(type="hidden", name="id", value=user.id)
-        input(type="text", name="username", value=user.username)
-        input(type="text", name="password", value=user.password)
-        button(type="submit")#editbutton Edit User
+    div.homeButtonContainer
+        a(href="/usersbook")
+            button.homeButton Return To Admin Page

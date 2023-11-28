@@ -1,12 +1,10 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-
 /* div-1 */
-
-.div-1{
+.div-1 {
   background-image: url("../images/homepage_bg_image1.jpg");
   background-size: cover;
   background-position: center;
@@ -15,7 +13,6 @@
   font-family: 'Fjalla One', sans-serif;
   height: 720px;
   width: 100%;
-  
 }
 
 .div-1 .btn-login {
@@ -33,7 +30,34 @@
 
 .div-1 .btn-login:hover {
   background-color: rgba(255, 255, 255, 0.7); 
+}
 
+
+.navbar {
+  padding: 0.5rem 1rem; 
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: white; 
+  margin-right: 20px; 
+  transition: color 0.3s ease; 
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #ccc; 
+}
+
+.navbar-brand a {
+  color: white; 
+  transition: color 0.3s ease; 
+}
+
+
+@media (max-width: 768px) {
+  .navbar .navbar-nav .nav-item .nav-link {
+    margin-right: 0; 
+    color: white;
+  }
 }
 
 
@@ -41,8 +65,8 @@
 
 .div-2 {
   display: flex;
-  align-items: center; /* Assure un alignement vertical centré */
-  justify-content: space-between; /* Espacement entre l'image et le texte */
+  align-items: center; 
+  justify-content: space-between; 
   background-color: whitesmoke;
   height: 740px;
   width: 100%;
@@ -77,29 +101,29 @@
 
 
 .div-2 img {
-  order: 2; /* Place l'image à droite */
-  width: 40%; /* Ajustez selon vos besoins */
+  order: 2; 
+  width: 40%; 
   height: auto;
-  margin-right: 50px; /* Espacement à droite de l'image */
+  margin-right: 50px; 
 }
 
 .div-2 .text-content {
-  order: 1; /* Place le texte à gauche */
+  order: 1; 
   max-width: 600px;
-  margin-left: 50px; /* Espacement à gauche du texte */
-  text-align: left; /* Alignement du texte à gauche */
+  margin-left: 50px; 
+  text-align: left; 
 }
 
-/* ... autres styles pour .div-2 ... */
+
 
 @media (max-width: 768px) {
   .div-2 {
-    flex-direction: column; /* Empile les éléments en colonne sur petits écrans */
+    flex-direction: column; 
   }
 
   .div-2 img, .div-2 .text-content {
-    order: initial; /* Réinitialise l'ordre pour le design responsive */
-    width: 100%; /* Ajuste la largeur pour les petits écrans */
-    margin: 10px 0; /* Ajuste les marges pour les petits écrans */
+    order: initial; 
+    width: 100%; 
+    margin: 10px 0; 
   }
 }

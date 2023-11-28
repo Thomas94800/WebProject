@@ -1,6 +1,6 @@
 /* Quizzes page */
 
-/* Style général de la page */
+
 
 
 .quizzesPage{
@@ -12,7 +12,6 @@
 
 }
 
-/* En-tête des sections */
 .quizzesPage h1 {
     text-align: center;
     color: #297385;
@@ -20,7 +19,7 @@
     padding : 20px;
 }
 
-/* Style des sections */
+
 
 
 .quizzesPage .box {
@@ -34,14 +33,13 @@
     
 }
 
-/* Style des titres de quiz */
+
 .quizzesPage .box h2 {
     color: #818181;
     text-align: center;
     margin-bottom: 15px;  
 }
 
-/* Style des paragraphes */
 .quizzesPage .box p {
     font-size: 16px;
     color: #666;
@@ -49,7 +47,6 @@
 }
 
 
-/* Style des boutons */
 .quizzesPage .box button {
     display: inline-block;
  
@@ -86,7 +83,6 @@
     background-color: rgb(238, 145, 151);;
 }
 
-/* Style des images */
 .quizzesPage img.quizImage {
     display: block;
     margin: 10px auto;
@@ -120,6 +116,14 @@
     color: white;
   }
   
+
+  .score {
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: #297385;
+    margin-bottom: 20px;
+  }
 
 /* Responsive design */
 @media (max-width: 768px) {

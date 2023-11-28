@@ -17,13 +17,13 @@ block content
                 .button-container
                     a(href="/quizcapital1")
                         button.softbutton Quiz 1
-                        p Your last score: #{quizScores.quizcapital1 || 'None'}
+                    p Your last score: #{quizScores.quizcapital1 || 'Not yet played'}
                     a(href="/quizcapital2")
                         button.mediumbutton Quiz 2
-                        p Your last score: #{quizScores.quizcapital2 || 'None'}
+                    p Your last score: #{quizScores.quizcapital2 || 'Not yet played'}
                     a(href="/quizcapital3")
                         button.hardbutton Quiz 3
-                        p Your last score: #{quizScores.quizcapital3 || 'None'}
+                    p Your last score: #{quizScores.quizcapital3 || 'Not yet played'}
                     br
 
         div.capitalsQuizSection
@@ -36,13 +36,13 @@ block content
                 .button-container
                     a(href="/quizdivers1")
                         button.softbutton Quiz 1
-                        p Your last score: #{quizScores.quizdivers1 || 'None'}
+                    p.score Your last score: #{quizScores.quizdivers1 || 'Not yet played'}
                     a(href="/quizdivers2")
                         button.mediumbutton Quiz 2
-                        p Your last score: #{quizScores.quizdivers2 || 'None'}
+                    p.score Your last score: #{quizScores.quizdivers2 || 'Not yet played'}
                     a(href="/quizdivers3")
                         button.hardbutton Quiz 3
-                        p Your last score: #{quizScores.quizdivers3 || 'None'}
+                    p.score Your last score: #{quizScores.quizdivers3 || 'Not yet played'}
                     br
         div.homeButtonContainer
             a(href="/")
