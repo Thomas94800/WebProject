@@ -1,0 +1,27 @@
+
+/* Information  */
+.infotext {
+    background-color: #ffffff; 
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+  }
+  
+  .infotext p {
+    font-size: 1em; 
+    margin-bottom: 15px; 
+    text-align: justify; 
+  }
+  
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .infotext, .infoimage img {
+      width: 90%; 
+    }
+  
+
+  }

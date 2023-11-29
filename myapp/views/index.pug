@@ -1,11 +1,19 @@
 extends layout
+
 block content
-
-
-  
   div.div-1.d-flex.justify-content-end.align-items-start
-    a.btn.btn-login(href='/login', role='button') Login
-
+    nav.navbar.navbar-expand-lg.navbar-light
+      div.container-fluid
+      
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        // Navigation content
+        div#navbarNav.collapse.navbar-collapse.justify-content-start
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link.active(href='/login', role='button') Login
+            li.nav-item
+              a.nav-link(href='/signup', role='button') Register
 
 
 
