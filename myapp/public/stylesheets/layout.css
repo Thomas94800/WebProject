@@ -23,53 +23,99 @@ header h1{
 
 
 /*footer*/
-
 footer {
-    
     bottom: 0;
     left: 0;
     width: 100%;
     font-family: 'Fjalla One', sans-serif;
     font-size: 14px;
     text-align: center;
-    
 }
 
-.footer-div-1{
+.footer-div-1 {
     width: 100%;
     background-color: #297385;
     background-size: cover;
     text-decoration: none;
-    display: inline-flex;
+    display: flex;
     list-style: none;
     padding: 20px;
+    justify-content: space-between; 
 }
 
-.footer-div-1 a{
-    
-    margin: auto ;
+.footer-div-1 a {
+    flex-grow: 1; 
+    text-align: center; 
     text-decoration: none;
     color: #17404b;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
-    
-   
-}
-
-.footer-div-2{
-    background-color: #17404b;
-    display: flex; 
-    align-items: center;
-    padding: 50px;
-  
-}
-
-.footer-div-2 a{
-    text-decoration: none;
-    color: #fff;
     margin: 0 10px; 
 }
 
 
+@media (max-width: 600px) {
+    .footer-div-1 {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .footer-div-1 a {
+        margin-bottom: 10px; 
+    }
+}
 
 
+
+
+/* Division 2 du footer */
+.footer-div-2 {
+    background-color: #17404b;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: bold; 
+    color: white;
+    height: 200px;
+}
+
+.footer-div-2 p, .footer-div-2 a {
+    margin: 10px 0; 
+
+}
+
+
+.footer-div-2 a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px; 
+    transition: background-color 0.3s ease; 
+}
+
+
+
+.footer-social-media, .footer-contact, .footer-multilanguage {
+    display: flex;
+    justify-content: center; 
+}
+
+.footer-social-media a, .footer-contact a {
+    margin: 0 15px; 
+}
+
+
+.footer-social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.footer-multilanguage a {
+    margin: 0 5px; 
+}

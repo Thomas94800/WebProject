@@ -205,7 +205,7 @@ app.post('/register', (req, res) => {
           const token = generateToken(username); // Call the function to generate the token
           res.cookie('token', token, { httpOnly: false }); // Set the token in a cookie
           req.session.jwt = token; // Set the token in the session
-          res.redirect('/'); // Redirect to the main page
+          res.redirect('/login'); // Redirect to the main page
         }
       });
     }
