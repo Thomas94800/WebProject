@@ -82,14 +82,6 @@ app.get('/', (req, res) => {
 app.get('/quizzes', (req, res) => {
   res.render('quizzes');
 });
-// Route for information page
-app.get('/information', (req, res) => {
-  res.render('information');
-});
-// Route for contact page
-app.get('/contact', (req, res) => {
-  res.render('contact');
-});
 // Route for login page
 app.get('/login', (req, res) => {
   res.render('login');
@@ -166,9 +158,6 @@ app.get('/useredit', (req, res) => {
 app.get('/userdelete', (req, res) => {
   res.render('userdelete');
 });
-
-
-
 // Route for userpage
 app.get('/userpage', (req, res) => {
   res.render('userpage');

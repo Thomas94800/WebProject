@@ -455,7 +455,7 @@ const getUserQuizScores = (userId) => {
       if (err) {
         reject(err);
       } else {
-        resolve(result[0]); // Assuming the result is an array with a single user row
+        resolve(result[0]); 
       }
     });
   });
@@ -530,7 +530,7 @@ router.post('/adduser', (req, res) => {
           console.log('User registered successfully');
           // Generate and send the JWT token
           const token = generateToken(username); // Call the function to generate the token
-          res.cookie('token', token, { httpOnly: true }); // Set the token in a cookie (you can use other methods too)
+          res.cookie('token', token, { httpOnly: true }); // Set the token in a cookie
           res.redirect('/usersbook'); // Redirect to the usersbook page
         }
       });
