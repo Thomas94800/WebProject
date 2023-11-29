@@ -1,7 +1,7 @@
-/* General Styles */
+
 
   
-  /* Section Styling */
+
   .sectionQuizCap {
     background-color: #ffffff;
     padding: 20px;
@@ -10,7 +10,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     
   }
-  /* Heading */
+ 
   .sectionQuizCap h2 {
     color: #1d515e;
     text-align: center;
@@ -19,7 +19,7 @@
     line-height: 1.6;
   }
   
-  /* Form Styling */
+ 
   .sectionQuizCap form {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     margin-top: 20px;
   }
   
-  /* Question Div */
+ 
   .sectionQuizCap div {
     background: #f9f9f9;
     padding: 10px;
@@ -35,13 +35,13 @@
     border-radius: 2px;
   }
   
-  /* Question Paragraph */
+  
   .sectionQuizCap p {
     font-size: 1.1em;
     margin: 0;
   }
   
-  /* Labels and Inputs */
+  
   .sectionQuizCap label {
     display: block;
     margin: 5px 0;
@@ -51,7 +51,7 @@
     margin-right: 10px;
   }
   
-  /* Submit Button */
+ 
   .sectionQuizCap button[type='submit'] {
     background-color: #297385;
     color: #ffffff;
@@ -74,10 +74,8 @@
   }
   
 
-/*# For result pages */
 
 
-  /* Results Section Styling */
   .sectionQuizResult {
     background-color: #ffffff;
     padding: 20px;
@@ -86,7 +84,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  /* Heading */
+ 
   .sectionQuizResult h2 {
     color: #1d515e;
     text-align: center;
@@ -94,7 +92,7 @@
     border-bottom: 2px solid #eeeeee;
   }
   
-  /* Feedback Div */
+
   .sectionQuizResult div {
     background: #f9f9f9;
     padding: 10px;
@@ -102,24 +100,23 @@
     margin-bottom: 20px;
     
   }
-  
-  /* Feedback Paragraphs */
+
   .sectionQuizResult p {
     font-size: 1em;
     margin: 5px 0;
   }
   
-  /* Correct Answer Highlight */
+
   .sectionQuizResult .correct {
     color: #27ae60;
   }
   
-  /* Incorrect Answer Highlight */
+ 
   .sectionQuizResult .incorrect {
     color: #e74c3c;
   }
   
-  /* Final Grade */
+  
   .sectionQuizResult.final-grade {
     font-size: 1.2em;
     font-weight: bold;
